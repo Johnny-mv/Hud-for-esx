@@ -1,0 +1,285 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../html/assets/css/style.css">
+    <link rel="stylesheet" href="../html/assets/css/fonts.css">
+    <script src="../html/assets/js/script.js" defer></script>
+    <title>ReactNet.eu - since 2025</title>
+</head>
+<body>
+    <div id="hud">
+        <div class="_helpnotify" id="helpnotify" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="circle" viewBox="0 0 59 59"><circle cx="29.5" cy="29.5" r="29.5" fill="#000" fill-opacity=".28"/><path fill="#fff" d="M28.06 30.22v3.14h5.9V36H25.3V22h8.56v2.64h-5.8v2.98h5.3v2.6h-5.3Z"/><path fill="url(#a)" d="M53 29.5C53 42.479 42.479 53 29.5 53S6 42.479 6 29.5 16.521 6 29.5 6 53 16.521 53 29.5Zm-42.785 0c0 10.65 8.634 19.285 19.285 19.285 10.65 0 19.285-8.634 19.285-19.285 0-10.65-8.634-19.285-19.285-19.285-10.65 0-19.285 8.634-19.285 19.285Z"/><defs><linearGradient id="a" x1="29.5" x2="29.5" y1="6" y2="53" gradientUnits="userSpaceOnUse"><stop stop-color="#E67E22"/><stop offset="1" stop-color="#E67E22"/></linearGradient></defs></svg>
+            <div class="_span-box">
+                <span id="helpnotifymessage">Bla-Bla Text here for example from real human bla bla bla!</span>
+            </div>
+        </div>
+        <div class="_progressbar" id="progressbar" style="display: none;">
+            <div class="_data">
+                <h1 id="progressbar-title">0%</h1>
+                <h2 id="progressbar-procent">100%</h2>
+            </div>
+            <div class="_progress">
+                <div class="_bar" id="innerprogressbar"></div>
+            </div>
+        </div>
+
+        <div class="_user-data">
+            <div class="_job">
+                <div class="_img-box">
+                    <img class="user" src="../html/assets/img/user.png">
+                </div>
+                <div class="stroke"></div>
+                <div class="_data">
+                    <h1 id="playerjob">Job</h1>
+                    <h2 id="playerjobgrade">Designer</h2>
+                </div>
+            </div>
+            <div class="_plz">
+                <div class="_img-box">
+                    <img class="compass" src="../html/assets/img/compass.png">
+                </div>
+                <div class="stroke"></div>
+                <div class="_data">
+                    <h1 id="street">Los Santos</h1>
+                    <h2 id="postal">10001</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="_server-data">
+            <div class="_online">
+                <div class="_img-box">
+                    <img class="user" src="../html/assets/img/user.png">
+                </div>
+                <div class="stroke"></div>
+                <div class="_data">
+                    <h1>Online</h1>
+                    <h2 id="onlinecount">999</h2>
+                </div>
+            </div>
+            <div class="_id">
+                <div class="_img-box">
+                    <img class="compass" src="../html/assets/img/compass.png">
+                </div>
+                <div class="stroke"></div>
+                <div class="_data">
+                    <h1>ID</h1>
+                    <h2 id="playerid">#999</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="_wtf">
+            <div class="_clock">
+                <div class="_img-box">
+                    <img class="clock" src="../html/assets/img/clock.png">
+                </div>
+                <div class="stroke"></div>
+                <div class="_data">
+                    <h1 id="time">27:01</h1>
+                    <h2 id="date">25.07.2025</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="_food-data">
+            <div class="_hunger">
+                <div class="_img-box">
+                    <img class="pizza" src="../html/assets/img/pizza.png">
+                </div>
+                <div class="stroke"></div>
+                <div class="_data">
+                    <h1>Hunger</h1>
+                    <div class="_progress">
+                        <div class="_bar" id="hungerbar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="_thirst">
+                <div class="_img-box">
+                    <img class="pizza" src="../html/assets/img/pizza.png">
+                </div>
+                <div class="stroke"></div>
+                <div class="_data">
+                    <h1>Thirst</h1>
+                    <div class="_progress">
+                        <div class="_bar" id="thirstbar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="_announcement" id="announcement" style="display: none;">
+            <div class="_announce">
+                <div class="_img-box">
+                    <img class="success" src="../html/assets/img/success.png">
+                </div>
+                <div class="_data">
+                    <div class="_type">
+                        <h1 id="announcement-title">TX-ADMIN</h1>
+                        <h2 id="announcement-description">DER SERVER STARTET IN 5 MINUTEN NEU!</h2>
+                    </div>
+                    <div class="_progress">
+                        <div class="_bar" id="announcement-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="_notifications" id="notifications">
+            <!-- <div class="_warning">
+                <div class="_img-box">
+                    <img class="success" src="../html/assets/img/success.png">
+                </div>
+                <div class="_data">
+                    <div class="_type">
+                        <h1>INFORMATION</h1>
+                        <h2>Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld</h2>
+                    </div>
+                    <div class="_progress">
+                        <div class="_bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="_success">
+                <div class="_img-box">
+                    <img class="success" src="../html/assets/img/success.png">
+                </div>
+                <div class="_data">
+                    <div class="_type">
+                        <h1>SUCCESS</h1>
+                        <h2>Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld</h2>
+                    </div>
+                    <div class="_progress">
+                        <div class="_bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="_error">
+                <div class="_img-box">
+                    <img class="success" src="../html/assets/img/success.png">
+                </div>
+                <div class="_data">
+                    <div class="_type">
+                        <h1>ERROR</h1>
+                        <h2>Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld zum Interagieren! Verdiene mehr Geld</h2>
+                    </div>
+                    <div class="_progress">
+                        <div class="_bar"></div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="_name">
+            <h1>MILENIO<span>V</span></h1>
+        </div>
+
+        <div class="_norification_intern" id="norification_intern">
+            <!-- <div class="_intern">
+                <div class="_img-box">
+                    <img class="success" src="../html/assets/img/success.png">
+                </div>
+                <div class="_data">
+                    <div class="_type">
+                        <h1>Teamchat - Balu tokat (1)</h1>
+                        <h2>Kann jemand in die Einreise kommen mir helfen?</h2>
+                    </div>
+                    <div class="_progress">
+                        <div class="_bar"></div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="_money-data">
+            <div class="_bar">
+                <div class="_data">
+                    <h1>Bargeld</h1>
+                    <h2 id="money">$999.999</h2>
+                </div>
+                <div class="stroke"></div>
+                <div class="_img-box">
+                    <img class="bar" src="../html/assets/img/bar.png">
+                </div>
+            </div>
+            <div class="_bank">
+                <div class="_data">
+                    <h1>Bank Money</h1>
+                    <h2 id="bank">$1.000</h2>
+                </div>
+                <div class="stroke"></div>
+                <div class="_img-box">
+                    <img class="bank" src="../html/assets/img/bank.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="_funklist" id="funklist" style="display: none;">
+            <div class="_radio">
+                    <h1 id="funk"><span class="funk">Funk</span> 85.5 FM</h1>
+                <div class="_img-box">
+                    <img class="radio" src="../html/assets/img/radio.png">
+                </div>
+            </div>
+            <div class="_list" id="radiolist">
+                <!-- <div class="_player on">
+                    <h1><span class="number">[007]</span> Magma Design</h1>
+                    <div class="green"></div>
+                </div>
+                <div class="_player off">
+                    <h1><span class="number">[007]</span> Magma Design</h1>
+                    <div class="red"></div>
+                </div>
+                <div class="_player off">
+                    <h1><span class="number">[007]</span> Magma Design</h1>
+                    <div class="red"></div>
+                </div>
+                <div class="_player off">
+                    <h1><span class="number">[007]</span> Magma Design</h1>
+                    <div class="red"></div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="_speedo" id="speedo" style="display: none;">
+            <div class="_counter">
+                <h1 class="count" id="speed">250<span class="kmh"> KMH</span></h1>
+            </div>
+            <div class="_progress">
+                <div class="_progress-data">
+                    <div class="_bar" id="bar1"></div>
+                    <div class="_bar" id="bar2"></div>
+                    <div class="_bar" id="bar3"></div>
+                    <div class="_bar" id="bar4"></div>
+                    <div class="_bar" id="bar5"></div>
+                    <div class="_bar" id="bar6"></div>
+                    <div class="_bar" id="bar7"></div>
+                    <div class="_bar" id="bar8"></div>
+                    <div class="_bar" id="bar9"></div>
+                    <div class="_bar"id="bar10"></div>
+                    <div class="_bar" id="bar11"></div>
+                    <div class="_barlong" id="barlong1"></div>
+                    <div class="_barlong" id="barlong2"></div>
+                    <div class="_barlong" id="barlong3"></div>
+                    <div class="_barlong" id="barlong4"></div>
+                    <div class="_barlong" id="barlong5"></div>
+                    <div class="_barlong" id="barlong6"></div>
+                </div>
+                <div class="_fuel-data">
+                    <img class="fuel" src="../html/assets/img/fuel.png">
+                    <div class="_data">
+                        <h1 id="fuel">55L<span class="liter">/100L</span></h1>
+                    </div>
+                    <div class="_fuelbar">
+                        <div class="_bar" id="fuelbar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

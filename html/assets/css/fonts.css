@@ -1,0 +1,34 @@
+@font-face { 
+  font-family: BebasNeue-Regular;
+  src: url('../fonts/BebasNeue-Regular.ttf'); 
+}
+
+@font-face { 
+  font-family: Gilroy-Regular;
+  src: url('../fonts/Gilroy-Regular.ttf'); 
+}
+
+@font-face { 
+  font-family: PuristaTRIAL-Medium;
+  src: url('../fonts/PuristaTRIAL-Medium.otf'); 
+}
+
+@font-face { 
+  font-family: Rajdhani-Medium;
+  src: url('../fonts/Rajdhani-Medium.ttf'); 
+}
+
+@font-face { 
+  font-family: Rajdhani-Regular;
+  src: url('../fonts/Rajdhani-Regular.ttf'); 
+}
+
+@font-face { 
+  font-family: Rajdhani-SemiBold;
+  src: url('../fonts/Rajdhani-SemiBold.ttf'); 
+}
+
+@font-face { 
+  font-family: TT-Supermolot-Neue-Trial-Condensed-ExtraBold;
+  src: url('../fonts/TT-Supermolot-Neue-Trial-Condensed-ExtraBold.ttf'); 
+}

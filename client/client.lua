@@ -1,17 +1,17 @@
 -- MARK: StartHud
-Citizen.CreateThread(function()
+CreateThread(function()
    while ESX == nil do
-      Citizen.Wait(0)
+      Wait(0)
    end
    while not ESX.PlayerLoaded do
-      Citizen.Wait(0)
+      Wait(0)
    end
 
    local PlayerData
 
    repeat
       PlayerData = ESX.GetPlayerData()
-      Citizen.Wait(100)
+      Wait(100)
    until PlayerData and PlayerData.job and PlayerData.accounts
 
    SendNuiMessage(json.encode({
@@ -48,7 +48,7 @@ Citizen.CreateThread(function()
 end)
 
 -- MARK: CarHud
-Citizen.CreateThread(function()
+CreateThread(function()
    while true do
       local sleep = 500
       if IsPedInAnyVehicle(PlayerPedId(), false) then
@@ -71,14 +71,14 @@ Citizen.CreateThread(function()
          }))
       end
 
-      Citizen.Wait(sleep)
+      Wait(sleep)
    end
 end)
 
 -- MARK: StatusHud
-Citizen.CreateThread(function()
+CreateThread(function()
    while true do
-      Citizen.Wait(1000)
+      Wait(1000)
       TriggerEvent('esx_status:getStatus', 'hunger', function(hunger)
          TriggerEvent('esx_status:getStatus', 'thirst', function(thirst)
             if hunger and thirst then
@@ -102,12 +102,12 @@ for i, postal in ipairs(postals) do
    postals[i] = { vec(postal.x, postal.y), code = postal.code}
 end
 
-Citizen.CreateThread(function()
+CreateThread(function()
    while postals == nil do
-      Citizen.Wait(0)
+      Wait(0)
    end
    while true do
-      Citizen.Wait(1000)
+      Wait(1000)
       local coords = GetEntityCoords(PlayerPedId())
       local nearestIndex, nearsestDestance
       coords = vec(coords[1], coords[2])
@@ -150,17 +150,17 @@ exports('Hud_HelpNotify', function(message)
          status = true,
          message = message
       }))
-      Citizen.CreateThread(function()
+      CreateThread(function()
          while timer + 100 >= GetGameTimer() do
             SendNuiMessage(json.encode({
                action = "HelpNotify",
                status = true,
                message = message
             }))
-            Citizen.Wait(100)
+            Wait(100)
          end
          isHelpNotify = false
-         Citizen.Wait(0)
+         Wait(0)
          if not isHelpNotify then
             SendNuiMessage(json.encode({
                action = "HelpNotify",
@@ -341,11 +341,11 @@ RegisterCommand('testhud', function()
 
    ia = 0
 
-   Citizen.CreateThread(function()
+   CreateThread(function()
       while ia < 800 do
          exports['mileniov_hud']:Hud_HelpNotify("Drücke E um zu Interagieren")
          ia = ia + 1
-         Citizen.Wait(0)
+         Wait(0)
       end
    end)
 end)

@@ -147,14 +147,14 @@ exports('Hud_HelpNotify', function(message)
       SendNuiMessage(json.encode({
          action = "HelpNotify",
          status = true,
-         message = message
+         message = message or "No message provided"
       }))
       CreateThread(function()
          while timer + 100 >= GetGameTimer() do
             SendNuiMessage(json.encode({
                action = "HelpNotify",
                status = true,
-               message = message
+               message = message or "No message provided"
             }))
             Wait(100)
          end
@@ -174,8 +174,8 @@ exports('Hud_Progressbar', function(title, time)
    SendNuiMessage(json.encode({
       action = "Progressbar",
       status = true,
-      title = title,
-      time = time
+      title = title or "Loading...",
+      time = time or 5000
    }))
 end)
 
@@ -189,10 +189,10 @@ end)
 exports('Hud_Notify', function(type, title, description, time)
    SendNuiMessage(json.encode({
       action = "Notify",
-      type = type,
-      title = title,
-      description = description,
-      time = time
+      type = type or "info",
+      title = title or "Hud",
+      description = description or "no message provided",
+      time = time or 5000
    }))
    PlaySoundFrontend(-1, "ATM_WINDOW", "HUD_FRONTEND_DEFAULT_SOUNDSET", 1)
 end)
@@ -200,9 +200,9 @@ end)
 exports('Hud_Announce', function(title, description, time)
    SendNuiMessage(json.encode({
       action = "Announce",
-      title = title,
-      description = description,
-      time = time
+      title = title or "No title provided",
+      description = description or "no message provided",
+      time = time or 10000
    }))
    PlaySoundFrontend(-1, "Exit_Capture_Zone", "DLC_Apartments_Drop_Zone_Sounds", 1)
 end)
@@ -212,8 +212,8 @@ RegisterNetEvent('Hud_Progressbar', function(title, time)
    SendNuiMessage(json.encode({
       action = "Progressbar",
       status = true,
-      title = title,
-      time = time
+      title = title or "Loading...",
+      time = time or 5000
    }))
 end)
 
@@ -227,10 +227,10 @@ end)
 RegisterNetEvent('Hud_Notify', function(type, title, description, time)
    SendNuiMessage(json.encode({
       action = "Notify",
-      type = type,
-      title = title,
-      description = description,
-      time = time
+      type = type or "info",
+      title = title or "Hud",
+      description = description or "no message provided",
+      time = time or 5000
    }))
    PlaySoundFrontend(-1, "ATM_WINDOW", "HUD_FRONTEND_DEFAULT_SOUNDSET", 1)
 end)
@@ -238,9 +238,9 @@ end)
 RegisterNetEvent('Hud_Announce', function(title, description, time)
    SendNuiMessage(json.encode({
       action = "Announce",
-      title = title,
-      description = description,
-      time = time
+      title = title or "No title provided",
+      description = description or "no message provided",
+      time = time or 10000
    }))
    PlaySoundFrontend(-1, "Exit_Capture_Zone", "DLC_Apartments_Drop_Zone_Sounds", 1)
 end)
@@ -248,8 +248,8 @@ end)
 RegisterNetEvent('esx:setJob', function(job)
    SendNuiMessage(json.encode({
       action = "UpdateJob",
-      job = ESX.PlayerData().job.label,
-      jobgrade = ESX.PlayerData().job.grade_label,
+      job = ESX.PlayerData().job.label or "No job",
+      jobgrade = ESX.PlayerData().job.grade_label or "No grade",
    }))
 end)
 

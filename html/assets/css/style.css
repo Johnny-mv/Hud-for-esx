@@ -81,7 +81,7 @@ body::-webkit-scrollbar {
 ._progressbar ._progress ._bar {
     width: 6.302vw;
     height: 0.417vw;
-    background: #2d2d2d;
+    background: #E67E22;
     box-shadow: 0 0 0.318vw 0 #E67E22, 0 0 0.182vw 0 #E67E22, 0 0 0.106vw 0 #E67E22, 0 0 0.053vw 0 #E67E22, 0 0 0.015vw 0 #E67E22, 0 0 0.008vw 0 #E67E22;
 }
 
@@ -101,7 +101,6 @@ body::-webkit-scrollbar {
     display: flex;
     width: 3.073vw;
     height: 3.073vw;
-    animation: rotate 2s linear infinite;
 }
 
 @keyframes rotate {

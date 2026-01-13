@@ -31,7 +31,6 @@ CreateThread(function()
             action = "UpdateMoney",
             money = v.money
          }))
-      elseif v.name == 'bank' then
          SendNuiMessage(json.encode({
             action = "UpdateBank",
             bank = v.money
@@ -343,7 +342,7 @@ RegisterCommand('testhud', function()
 
    CreateThread(function()
       while ia < 800 do
-         exports['mileniov_hud']:Hud_HelpNotify("Drücke E um zu Interagieren")
+         exports['Hud']:Hud_HelpNotify("Drücke E um zu Interagieren")
          ia = ia + 1
          Wait(0)
       end

@@ -1,73 +1,74 @@
-# Mileniov HUD für ESX
 
-Dies ist ein anpassbares HUD für FiveM/ESX mit vielen Features wie Speedometer, Statusanzeigen, Postleitzahlen, Benachrichtigungen, Fortschrittsbalken, Radio-Liste und mehr.
+# Mileniov HUD for ESX
+
+This is a customizable HUD for FiveM/ESX with many features such as speedometer, status displays, postal codes, notifications, progress bar, radio list, and more.
 
 ## Features
 
-- Spieler-ID, Job und Kontostände (Bargeld, Bank)
-- Fahrzeug-HUD (Geschwindigkeit, RPM, Tank)
-- Statusanzeigen (Hunger, Durst)
-- Postleitzahlen- und Straßennamenanzeige
-- Fortschrittsbalken
-- Benachrichtigungen (Notify, Announce, HelpNotify)
-- Radio-Liste (pma-voice Integration)
-- Spielerzähler
+- Player ID, job, and account balances (cash, bank)
+- Vehicle HUD (speed, RPM, fuel)
+- Status displays (hunger, thirst)
+- Postal code and street name display
+- Progress bar
+- Notifications (Notify, Announce, HelpNotify)
+- Radio list (pma-voice integration)
+- Player counter
 
 ---
 
 ## Exports
 
-Diese Funktionen können von anderen Ressourcen über `exports['mileniov_hud']:ExportName(...)` aufgerufen werden:
+These functions can be called from other resources via `exports['Hud']:ExportName(...)`:
 
 ### Hud_HideHud(status)
-Blendet das HUD ein/aus.
+Shows or hides the HUD.
 ```lua
-exports['mileniov_hud']:Hud_HideHud(true) -- HUD ausblenden
-exports['mileniov_hud']:Hud_HideHud(false) -- HUD einblenden
+exports['Hud']:Hud_HideHud(true) -- Hide HUD
+exports['Hud']:Hud_HideHud(false) -- Show HUD
 ```
 
 ### Hud_HelpNotify(message)
-Zeigt eine temporäre Hilfsbenachrichtigung an.
+Shows a temporary help notification.
 ```lua
-exports['mileniov_hud']:Hud_HelpNotify('Drücke E um zu interagieren')
+exports['Hud']:Hud_HelpNotify('Press E to interact')
 ```
 
 ### Hud_Progressbar(title, time)
-Zeigt einen Fortschrittsbalken an.
+Shows a progress bar.
 ```lua
-exports['mileniov_hud']:Hud_Progressbar('Lädt...', 3000)
+exports['Hud']:Hud_Progressbar('Loading...', 3000)
 ```
 
 ### Hud_StopProgressbar()
-Blendet den Fortschrittsbalken aus.
+Hides the progress bar.
 ```lua
-exports['mileniov_hud']:Hud_StopProgressbar()
+exports['Hud']:Hud_StopProgressbar()
 ```
 
 ### Hud_Notify(type, title, description, time)
-Zeigt eine Benachrichtigung an. Typen: `success`, `warning`, `error`.
+Shows a notification. Types: `success`, `warning`, `error`.
 ```lua
-exports['mileniov_hud']:Hud_Notify('success', 'Titel', 'Beschreibung', 5000)
+exports['Hud']:Hud_Notify('success', 'Title', 'Description', 5000)
 ```
 
 ### Hud_Announce(title, description, time)
-Große Ankündigung oben auf dem Bildschirm.
+Large announcement at the top of the screen.
 ```lua
-exports['mileniov_hud']:Hud_Announce('Titel', 'Beschreibung', 8000)
+exports['Hud']:Hud_Announce('Title', 'Description', 8000)
 ```
 
 ---
 
 ## Events
 
-Diese Events können per `TriggerEvent` ausgelöst werden:
+These events can be triggered via `TriggerEvent`:
 
 - `Hud_Progressbar`, `Hud_StopProgressbar`, `Hud_Notify`, `Hud_Announce`
-	- Beispiel:
+	- Example:
 		```lua
-		TriggerEvent('Hud_Notify', 'success', 'Titel', 'Beschreibung', 5000)
-		TriggerEvent('Hud_Announce', 'Titel', 'Beschreibung', 8000)
-		TriggerEvent('Hud_Progressbar', 'Lädt...', 3000)
+		TriggerEvent('Hud_Notify', 'success', 'Title', 'Description', 5000)
+		TriggerEvent('Hud_Announce', 'Title', 'Description', 8000)
+		TriggerEvent('Hud_Progressbar', 'Loading...', 3000)
 		TriggerEvent('Hud_StopProgressbar')
 		```
 
@@ -75,32 +76,32 @@ Diese Events können per `TriggerEvent` ausgelöst werden:
 
 ## Server Callbacks
 
-- `Hud_GetPlayerName(playerId)` → Spielername
-- `Hud_GetPlayerCount()` → Anzahl der Spieler
-- `Hud_GetRadioPlayers()` → Spieler im aktuellen Funkkanal
+- `Hud_GetPlayerName(playerId)` → Player name
+- `Hud_GetPlayerCount()` → Number of players
+- `Hud_GetRadioPlayers()` → Players in the current radio channel
 
 ---
 
-## Sonstiges
+## Miscellaneous
 
-- Postleitzahlen werden aus der Datei `postal.json` geladen und automatisch angezeigt.
-- Die Radio-Liste ist mit pma-voice kompatibel.
-- Testbefehl: `/testhud` (zeigt alle HUD-Elemente als Demo)
+- Postal codes are loaded from the `postal.json` file and displayed automatically.
+- The radio list is compatible with pma-voice.
+- Test command: `/testhud` (shows all HUD elements as a demo)
 
 ---
 
 ## Installation
 
-1. In deinen Ressourcenordner legen und in der `server.cfg` starten:
+1. Place in your resources folder and start in `server.cfg`:
 	 ```
-	 ensure mileniov_hud
+	 ensure Hud
 	 ```
-2. Abhängigkeiten: ESX, pma-voice
+2. Dependencies: ESX, pma-voice
 
 ---
 
 ## Credits
 
-Erstellt von Johnny-mv, angepasst für Mileniov.
+Created by Johnny-mv, adapted for Mileniov.
 
-Dieses Script ist kostenlos und darf nicht verkauft werden. Bitte respektiere die Arbeit der Entwickler.
+This script is free and may not be sold. Please respect the work of the developers.
